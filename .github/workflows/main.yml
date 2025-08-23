@@ -1,0 +1,33 @@
+name: Build AWS MSK IAM Authentication Plugin Container
+
+on:
+  push:
+    branches: [ "main" ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: read
+      packages: write
+
+    steps:
+      # Checkout sources
+      - uses: actions/checkout@v4
+
+      # Setup Docker credentials
+      - name: Log in to Docker Hub
+        uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      # Build the Container image for the filesystem plugin
+      - name: Build the container
+        run: docker build --no-cache --build-arg VERSION=$(cat version) -t ghcr.io/kafka-oci-plugins/aws-msk-iam-auth:$(cat version) .
+      - name: Push the container
+        run: docker push ghcr.io/kafka-oci-plugins/aws-msk-iam-auth:$(cat version)
