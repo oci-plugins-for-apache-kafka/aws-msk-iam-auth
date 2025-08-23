@@ -11,8 +11,8 @@ FROM scratch
 ARG VERSION=latest
 ARG PLUGIN=plugin
 
-LABEL org.opencontainers.image.source='https://github.com/kafka-oci-plugins/aws-msk-iam-auth' \
-      org.opencontainers.image.url='https://github.com/kafka-oci-plugins/aws-msk-iam-auth' \
+LABEL org.opencontainers.image.source='https://github.com/oci-plugins-for-apache-kafka/aws-msk-iam-auth' \
+      org.opencontainers.image.url='https://github.com/oci-plugins-for-apache-kafka/aws-msk-iam-auth' \
       org.opencontainers.image.version="${VERSION}" \
       org.opencontainers.image.title="Amazon MSK Library for AWS Identity and Access Management" \
       org.opencontainers.image.description='Container images with the Amazon MSK Library for AWS Identity and Access Management'

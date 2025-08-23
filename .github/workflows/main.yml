@@ -28,6 +28,6 @@ jobs:
 
       # Build the Container image for the filesystem plugin
       - name: Build the container
-        run: docker build --no-cache --build-arg VERSION=$(cat version) -t ghcr.io/kafka-oci-plugins/aws-msk-iam-auth:$(cat version) .
+        run: docker build --no-cache --build-arg VERSION=$(cat version) -t ghcr.io/oci-plugins-for-apache-kafka/aws-msk-iam-auth:$(cat version) .
       - name: Push the container
-        run: docker push ghcr.io/kafka-oci-plugins/aws-msk-iam-auth:$(cat version)
+        run: docker push ghcr.io/oci-plugins-for-apache-kafka/aws-msk-iam-auth:$(cat version)

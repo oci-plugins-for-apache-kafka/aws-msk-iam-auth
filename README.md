@@ -1,5 +1,7 @@
 # Container images with the Amazon MSK Library for AWS Identity and Access Management
 
+Note: This repository is not part of the Apache Kafka project or related to Amazon AWS!
+
 This repository contains set of container images with the Apache Kafka [Amazon MSK Library for AWS Identity and Access Management](https://github.com/aws/aws-msk-iam-auth) Apache Kafka® plugin.
 These container images should allow you to use it with Strimzi 0.47 and newer using the Kubernetes Image Volumes.
 You should also be able to use with other Apache Kafka® distributions running on Kubernetes.
@@ -28,7 +30,7 @@ spec:
       volumes:
         - name: aws-msk-iam-auth
           image:
-            reference: ghcr.io/kafka-oci-plugins/aws-msk-iam-auth:2.3.2
+            reference: ghcr.io/oci-plugins-for-apache-kafka/aws-msk-iam-auth:2.3.2
     connectContainer:
       volumeMounts:
         - name: aws-msk-iam-auth
