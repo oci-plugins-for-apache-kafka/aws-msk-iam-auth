@@ -30,7 +30,7 @@ spec:
       volumes:
         - name: aws-msk-iam-auth
           image:
-            reference: ghcr.io/oci-plugins-for-apache-kafka/aws-msk-iam-auth:2.3.2
+            reference: ghcr.io/oci-plugins-for-apache-kafka/aws-msk-iam-auth:2.3.5
     connectContainer:
       volumeMounts:
         - name: aws-msk-iam-auth
